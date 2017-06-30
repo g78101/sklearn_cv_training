@@ -31,7 +31,7 @@ for url in lists:
   if trainArrry is None:
     trainArrry = np.ndarray([0,image.size],int)
   # Add TrainingData
-  trainArrry = np.vstack((trainArrry,image.flatten()[None,:]))
+  trainArrry = np.vstack((trainArrry,image.flatten()))
   # Add Target
   targetArray = np.append(targetArray,os.path.basename(url).split('_')[0])
 # Check trainArrry and targetArray
