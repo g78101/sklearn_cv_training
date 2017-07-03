@@ -31,7 +31,7 @@ for (x,y,w,h) in rects:
     squareImage[(length-h)/2:(length-h)/2+h,(length-w)/2:(length-w)/2+w]=roi
     # Resize the square mat
     squareImage = cv2.resize(squareImage, (20, 20))
-    squareImage = cv2.dilate(squareImage, (9, 9))
+    squareImage = cv2.dilate(squareImage, None)
     #Prediction the square mat
     result = clf.predict(squareImage.flatten().reshape(1,-1))
     cv2.putText(im, str(result[0]), (x,y),cv2.FONT_HERSHEY_DUPLEX, 2, (0, 255, 255), 3)
